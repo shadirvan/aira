@@ -58,11 +58,11 @@ class home_screen extends StatelessWidget {
                         color: Colors.grey.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 7,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
-                  child: Column(
+                  child: const Column(
                     children: [
                       Image(
                         image: AssetImage('assets/images/teacher.jpg'),
