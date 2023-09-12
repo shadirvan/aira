@@ -2,7 +2,7 @@ import 'package:aira/home_screen.dart';
 
 import 'package:flutter/material.dart';
 
-void main(List<String> args) {
+void main() {
   runApp(const MaterialApp(
     home: home_screen(),
   ));
