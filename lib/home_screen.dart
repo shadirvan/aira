@@ -11,7 +11,7 @@ class home_screen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
+        title: const Text(
           'Hi, John',
           style: TextStyle(
               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 30),
@@ -19,12 +19,12 @@ class home_screen extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.account_circle_rounded,
                 color: Colors.black,
                 size: 40,
               )),
-          SizedBox(
+          const SizedBox(
             width: 10,
           )
         ],
@@ -35,12 +35,12 @@ class home_screen extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          Text(
+          const Text(
             'Lets Learn',
             style: TextStyle(
                 color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -66,8 +66,10 @@ class home_screen extends StatelessWidget {
                     children: [
                       Image(
                         image: AssetImage('assets/images/teacher.jpg'),
-                        width: 130,
-                        alignment: Alignment.topRight,
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.cover,
+                        alignment: Alignment.center,
                       ),
                       Text(
                         'ask me',
@@ -97,11 +99,14 @@ class home_screen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Column(
+                  child: const Column(
                     children: [
                       Image(
                         image: AssetImage('assets/images/scanner.jpg'),
-                        width: 130,
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.cover,
+                        alignment: Alignment.center,
                       ),
                       Text(
                         'Scan me',
@@ -135,12 +140,14 @@ class home_screen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Column(
+                  child: const Column(
                     children: [
                       Image(
                         image: AssetImage('assets/images/exam 2.webp'),
-                        width: 130,
-                        height: 118,
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.cover,
+                        alignment: Alignment.center,
                       ),
                       Text(
                         'Start Quiz',
@@ -153,7 +160,7 @@ class home_screen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 18,
               ),
               Padding(
@@ -173,18 +180,22 @@ class home_screen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Column(
+                  child: const Column(
                     children: [
                       Image(
                         image: AssetImage('assets/images/timetable.jpg'),
-                        width: 130,
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.cover,
+                        alignment: Alignment.center,
                       ),
                       Text(
-                        'Create Time-table',
+                        'Create Time table',
                         style: TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
