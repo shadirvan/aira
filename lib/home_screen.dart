@@ -11,189 +11,209 @@ class home_screen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
-          'Hi, John',
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 30),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            'Hi, John',
+            style: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 30),
+          ),
         ),
         actions: [
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.account_circle_rounded,
                 color: Colors.black,
                 size: 40,
               )),
-          SizedBox(
+          const SizedBox(
             width: 10,
           )
         ],
       ),
       body: SafeArea(
-          child: Column(
-        children: [
-          SizedBox(
-            height: 30,
-          ),
-          Text(
-            'Lets Learn',
-            style: TextStyle(
-                color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(30),
-                child: Container(
-                  height: 180,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: const Column(
-                    children: [
-                      Image(
-                        image: AssetImage('assets/images/teacher.jpg'),
-                        width: 130,
-                        alignment: Alignment.topRight,
-                      ),
-                      Text(
-                        'ask me',
-                        style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      )
-                    ],
-                  ),
-                ),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              width: double.infinity,
+              child: Text(
+                'Let\'s Learn',
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.start,
               ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Container(
-                  height: 180,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      height: 150,
+                      width: 160,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: const Offset(0, 3),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [
-                      Image(
-                        image: AssetImage('assets/images/scanner.jpg'),
-                        width: 130,
+                      child: const Column(
+                        children: [
+                          Image(
+                            image: AssetImage('assets/images/teacher.jpg'),
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.cover,
+                            alignment: Alignment.center,
+                          ),
+                          Text(
+                            'ask me',
+                            style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          )
+                        ],
                       ),
-                      Text(
-                        'Scan me',
-                        style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      height: 190,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                      child: const Column(
+                        children: [
+                          Image(
+                            image: AssetImage('assets/images/exam 2.webp'),
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.cover,
+                            alignment: Alignment.center,
+                          ),
+                          Text(
+                            'Start Quiz',
+                            style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
+                  ],
                 ),
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Container(
-                  height: 180,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
+                Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      height: 190,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: const Offset(0, 3),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [
-                      Image(
-                        image: AssetImage('assets/images/exam 2.webp'),
-                        width: 130,
-                        height: 118,
+                      child: const Column(
+                        children: [
+                          Image(
+                            image: AssetImage('assets/images/scanner.jpg'),
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.cover,
+                            alignment: Alignment.center,
+                          ),
+                          Text(
+                            'Scan me',
+                            style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                        ],
                       ),
-                      Text(
-                        'Start Quiz',
-                        style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      height: 190,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 18,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Container(
-                  height: 180,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
+                      child: const Column(
+                        children: [
+                          Image(
+                            image: AssetImage('assets/images/timetable.jpg'),
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.cover,
+                            alignment: Alignment.center,
+                          ),
+                          Text(
+                            'Create Time table',
+                            style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [
-                      Image(
-                        image: AssetImage('assets/images/timetable.jpg'),
-                        width: 130,
-                      ),
-                      Text(
-                        'Create Time-table',
-                        style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          )
-        ],
-      )),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
