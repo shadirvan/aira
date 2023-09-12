@@ -32,7 +32,7 @@ class home_screen extends StatelessWidget {
       body: SafeArea(
           child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Text(
