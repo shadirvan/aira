@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:aira/screens/summarise_screen.dart';
 import 'package:flutter/material.dart';
 
 class home_screen extends StatelessWidget {
@@ -59,39 +60,47 @@ class home_screen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      height: 150,
-                      width: 160,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 1,
-                            blurRadius: 12,
-                            offset: const Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: const Column(
-                        children: [
-                          Image(
-                            image: AssetImage('assets/images/teacher.jpg'),
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.cover,
-                            alignment: Alignment.center,
-                          ),
-                          Text(
-                            'Summarise',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-                          )
-                        ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => summariseScreen()));
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.all(10),
+                        height: 150,
+                        width: 160,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 12,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: const Column(
+                          children: [
+                            Image(
+                              image: AssetImage('assets/images/teacher.jpg'),
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                              alignment: Alignment.center,
+                            ),
+                            Text(
+                              'Summarise',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                     Container(
