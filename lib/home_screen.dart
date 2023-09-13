@@ -42,7 +42,7 @@ class home_screen extends StatelessWidget {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.symmetric(horizontal: 30),
               width: double.infinity,
-              child: Text(
+              child: const Text(
                 'Let\'s Learn',
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.start,
@@ -69,8 +69,8 @@ class home_screen extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
+                            spreadRadius: 1,
+                            blurRadius: 12,
                             offset: const Offset(0, 3),
                           ),
                         ],
@@ -85,9 +85,9 @@ class home_screen extends StatelessWidget {
                             alignment: Alignment.center,
                           ),
                           Text(
-                            'ask me',
+                            'Summarise',
                             style: TextStyle(
-                                fontSize: 28,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black),
                           )
@@ -95,8 +95,9 @@ class home_screen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(10),
-                      height: 190,
+                      margin: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
+                      height: 175,
                       width: 150,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -104,13 +105,14 @@ class home_screen extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3),
+                            spreadRadius: 1,
+                            blurRadius: 12,
+                            offset: const Offset(0, 3),
                           ),
                         ],
                       ),
                       child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Image(
                             image: AssetImage('assets/images/exam 2.webp'),
@@ -122,7 +124,7 @@ class home_screen extends StatelessWidget {
                           Text(
                             'Start Quiz',
                             style: TextStyle(
-                                fontSize: 28,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black),
                           ),
@@ -137,8 +139,9 @@ class home_screen extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.all(10),
-                      height: 190,
+                      padding: EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
+                      height: 175,
                       width: 150,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -146,13 +149,14 @@ class home_screen extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
+                            spreadRadius: 1,
+                            blurRadius: 12,
                             offset: const Offset(0, 3),
                           ),
                         ],
                       ),
                       child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Image(
                             image: AssetImage('assets/images/scanner.jpg'),
@@ -164,7 +168,7 @@ class home_screen extends StatelessWidget {
                           Text(
                             'Scan me',
                             style: TextStyle(
-                                fontSize: 28,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black),
                           ),
@@ -172,8 +176,9 @@ class home_screen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(10),
-                      height: 190,
+                      padding: EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
+                      height: 175,
                       width: 150,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -181,13 +186,14 @@ class home_screen extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3),
+                            spreadRadius: 1,
+                            blurRadius: 12,
+                            offset: const Offset(0, 3),
                           ),
                         ],
                       ),
                       child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Image(
                             image: AssetImage('assets/images/timetable.jpg'),
@@ -197,9 +203,9 @@ class home_screen extends StatelessWidget {
                             alignment: Alignment.center,
                           ),
                           Text(
-                            'Create Time table',
+                            'Create time table',
                             style: TextStyle(
-                                fontSize: 28,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black),
                             textAlign: TextAlign.center,
