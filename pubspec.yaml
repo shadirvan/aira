@@ -60,12 +60,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets\images\teacher image.jpg
-     - assets\images\teacher.jpg
-     - assets\images\scanner.jpg
-     - assets\images\exam.png
-     - assets\images\exam 2.webp
-     - assets\images\timetable.jpg
+     - assets/images/
      
 
   # An image asset can refer to one or more resolution-specific "variants", see
