@@ -39,6 +39,35 @@ class home_screen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                  child: Container(
+                height: 150,
+                width: 500,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 12,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                  color: Colors.amber,
+                  border: Border.all(width: 2, color: Colors.yellow.shade200),
+                ),
+                child: Center(
+                  child: Text(
+                    '\'DO OR DIE, \n \t \t \t -Mahatma Gandhi',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              )),
+            ),
             Container(
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -50,7 +79,7 @@ class home_screen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 12,
             ),
             SingleChildScrollView(
               child: Row(
