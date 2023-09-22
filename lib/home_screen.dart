@@ -1,3 +1,5 @@
+import 'package:aira/screens/question_screen.dart';
+
 import 'package:aira/screens/summarise_screen.dart';
 import 'package:aira/screens/time_table_screen.dart';
 
@@ -133,41 +135,48 @@ class home_screen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        margin: const EdgeInsets.all(10),
-                        padding: EdgeInsets.all(10),
-                        height: 175,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 1,
-                              blurRadius: 12,
-                              offset: const Offset(0, 3),
-                            ),
-                          ],
-                        ),
-                        child: const Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image(
-                              image: AssetImage('assets/images/exam 2.webp'),
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
-                              alignment: Alignment.center,
-                            ),
-                            Text(
-                              'Start Quiz',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
-                            ),
-                          ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => QuestionScreen(),
+                          ));
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.all(10),
+                          padding: EdgeInsets.all(10),
+                          height: 175,
+                          width: 150,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 1,
+                                blurRadius: 12,
+                                offset: const Offset(0, 3),
+                              ),
+                            ],
+                          ),
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Image(
+                                image: AssetImage('assets/images/exam 2.webp'),
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.cover,
+                                alignment: Alignment.center,
+                              ),
+                              Text(
+                                'Start Quiz',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       const SizedBox(

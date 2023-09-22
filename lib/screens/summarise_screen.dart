@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:aira/widgets/message_bubble.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:http/http.dart' as http;
 
 class summariseScreen extends StatefulWidget {
   summariseScreen({super.key});
@@ -10,13 +14,22 @@ class summariseScreen extends StatefulWidget {
 
 class _summariseScreenState extends State<summariseScreen> {
   final TextEditingController _summaryController = TextEditingController();
-  var messages = [];
+  List<Widget> messageWidgets = [];
+  var replayMessages = [];
+  String promptMessage = '';
+  int words = 0;
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _summaryController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Summarise',
           style: TextStyle(
               fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
@@ -52,19 +65,14 @@ class _summariseScreenState extends State<summariseScreen> {
                     color: Colors.black,
                     width: 1,
                   )),
-              child: messages.isEmpty
+              child: messageWidgets.isEmpty
                   ? const Center(
                       child: Text('Try summerising something! '),
                     )
                   : ListView.builder(
-                      itemCount: messages.length,
+                      itemCount: messageWidgets.length,
                       itemBuilder: (context, index) {
-                        return MessageBubble.first(
-                            username: 'User',
-                            userImage:
-                                'https://cdn-icons-png.flaticon.com/512/219/219970.png',
-                            message: messages[index],
-                            isMe: false);
+                        return messageWidgets[index];
                       },
                     ),
             ),
@@ -79,11 +87,49 @@ class _summariseScreenState extends State<summariseScreen> {
                   border: const OutlineInputBorder(),
                   floatingLabelAlignment: FloatingLabelAlignment.center,
                   suffixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          messages.add(_summaryController.text);
-                        });
+                      onPressed: () async {
+                        setState(() {});
+                        promptMessage = _summaryController.text;
+                        List<String> splitMessage = promptMessage.split(' ');
+
+                        words = splitMessage.length;
+
                         _summaryController.clear();
+
+                        messageWidgets.add(MessageBubble.first(
+                            userImage: '',
+                            username: 'User',
+                            message: promptMessage,
+                            isMe: true));
+
+                        final response = await http.post(
+                            Uri.parse(
+                                'https://api.openai.com/v1/chat/completions'),
+                            headers: {
+                              'Content-Type': 'application/json',
+                              'Authorization': 'Bearer ${dotenv.env['token']}',
+                            },
+                            body: jsonEncode({
+                              'model': 'gpt-3.5-turbo',
+                              "messages": [
+                                {
+                                  "role": "user",
+                                  "content":
+                                      "summarise $promptMessage in ${words / 2} words"
+                                }
+                              ],
+                              'temperature': 0.7,
+                            }));
+                        setState(() {
+                          print(jsonDecode(response.body)['choices'][0]
+                              ['message']['content']);
+                          messageWidgets.add(MessageBubble.first(
+                              userImage: '',
+                              username: 'AI',
+                              message: jsonDecode(response.body)['choices'][0]
+                                  ['message']['content'],
+                              isMe: false));
+                        });
                       },
                       icon: const Icon(
                         Icons.send,
