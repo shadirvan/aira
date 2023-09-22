@@ -1,16 +1,7 @@
-# aira
+# Aira
 
-A new Flutter project.
+AI integrated Reserach Application developed for  "Mobile App Development Challenge for Students - AI Educate" associated with the upcoming International Conclave on Generative AI and the Future of Education, taking place from September 30th to October 1st, 2023, in Thiruvananthapuram.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
