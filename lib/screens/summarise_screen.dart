@@ -67,7 +67,7 @@ class _summariseScreenState extends State<summariseScreen> {
                   )),
               child: messageWidgets.isEmpty
                   ? const Center(
-                      child: Text('Try summerising something! '),
+                      child: Text('Enter long paragraphs below to summarise '),
                     )
                   : ListView.builder(
                       itemCount: messageWidgets.length,

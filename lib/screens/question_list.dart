@@ -28,9 +28,15 @@ class QuestionListScreen extends StatelessWidget {
       ),
       body: Center(
         child: ListView.builder(
+          padding: EdgeInsets.all(10),
           itemCount: questions.length,
           itemBuilder: (context, index) {
-            return Text(questions[index]);
+            return ListTile(
+              title: Text(
+                questions[index],
+                style: TextStyle(fontSize: 18),
+              ),
+            );
           },
         ),
       ),

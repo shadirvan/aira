@@ -51,21 +51,29 @@ class _QuestionScreenState extends State<QuestionScreen> {
       body: Container(
         margin: const EdgeInsets.all(20),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          const Text(
+            'Enter a topic to generate questions from',
+            style: TextStyle(fontSize: 18),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           TextField(
               controller: _topicController,
               decoration: InputDecoration(
                 label: const Text('Topic'),
                 hintText: 'Ask question from',
                 border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               )),
           const SizedBox(
             height: 10,
           ),
           _isLoading
-              ? CircularProgressIndicator()
+              ? const CircularProgressIndicator()
               : ElevatedButton(
                   onPressed: () async {
+                    FocusManager.instance.primaryFocus?.unfocus();
                     _topic = _topicController.text;
 
                     setState(() {
