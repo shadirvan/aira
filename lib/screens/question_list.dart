@@ -28,7 +28,7 @@ class QuestionListScreen extends StatelessWidget {
       ),
       body: Center(
         child: ListView.builder(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           itemCount: questions.length,
           itemBuilder: (context, index) {
             return ListTile(

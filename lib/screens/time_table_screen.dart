@@ -8,22 +8,70 @@ class timetable_screens extends StatefulWidget {
 }
 
 class _timetable_screensState extends State<timetable_screens> {
-  String dropdownvalue_study = '4 hr';
-  String dropdownvalue_intervel = '4 hr';
-  String dropdownvalue_lunch = '4 hr';
+  String wakeTime = '5:00 AM';
+  String sleepTime = '10:00 PM';
+  String classStartTime = '9:00 AM';
+  String classEndTime = '9:00 AM';
+
   String dropdownvalue_prayer = '4 hr';
-  var items = [
-    '4 hr',
-    '5 hr',
-    '6 hr',
-    '7 hr',
-    '8 hr',
+  var WakingTimes = [
+    '5:00 AM',
+    '5:30 AM',
+    '6:00 AM',
+    '6:30 AM',
+    '7:00 AM',
+    '7:30 AM',
+    '8:00 AM',
+    '8:30 AM',
+    '9:00 AM',
+  ];
+  var sleepingTimes = [
+    '8:00 PM',
+    '8:30 PM',
+    '9:00 PM',
+    '9:30 PM',
+    '10:00 PM',
+    '10:30 PM',
+    '11:00 PM',
+    '11:30 PM',
+    '12:00 PM',
+    '12:30 PM',
+    '1:00 PM',
+    '1:30 PM',
+    '2:00 PM',
+  ];
+
+  var classStartTimes = [
+    '7:00 AM',
+    '7:30 AM',
+    '8:00 AM',
+    '8:30 AM',
+    '9:00 AM',
+    '8:30 AM',
+    '10:00 AM',
+    '10:30 AM',
+    '11:00 AM',
+    '11:30 AM',
+  ];
+  var classEndTimes = [
+    '2:00 PM',
+    '2:30 PM',
+    '3:00 PM',
+    '3:30 PM',
+    '4:00 PM',
+    '4:30 PM',
+    '5:00 PM',
+    '5:30 PM',
+    '6:00 PM',
+    '6:30 PM',
+    '7:00 PM',
+    '7:30 PM',
   ];
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Create Time-Table',
           style: TextStyle(
               fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
@@ -45,10 +93,10 @@ class _timetable_screensState extends State<timetable_screens> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 1),
               child: Text(
-                'Select hr for study',
+                'Wakeup Time',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0,
@@ -56,18 +104,18 @@ class _timetable_screensState extends State<timetable_screens> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: Center(
                 child: DropdownButton(
                   isExpanded: true,
                   // Initial Value
-                  value: dropdownvalue_study,
+                  value: wakeTime,
 
                   // Down Arrow Icon
                   icon: const Icon(Icons.keyboard_arrow_down),
 
                   // Array list of items
-                  items: items.map((String items) {
+                  items: WakingTimes.map((String items) {
                     return DropdownMenuItem(
                       value: items,
                       child: Text(items),
@@ -76,7 +124,7 @@ class _timetable_screensState extends State<timetable_screens> {
 
                   onChanged: (String? newValue) {
                     setState(() {
-                      dropdownvalue_study = newValue!;
+                      wakeTime = newValue!;
                     });
                   },
                 ),
@@ -85,7 +133,7 @@ class _timetable_screensState extends State<timetable_screens> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
               child: Text(
-                'Select hr for intervel',
+                'Sleep Time',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0,
@@ -98,13 +146,13 @@ class _timetable_screensState extends State<timetable_screens> {
                 // Initial Value
                 isExpanded: true,
 
-                value: dropdownvalue_intervel,
+                value: sleepTime,
 
                 // Down Arrow Icon
                 icon: const Icon(Icons.keyboard_arrow_down),
 
                 // Array list of items
-                items: items.map((String items) {
+                items: sleepingTimes.map((String items) {
                   return DropdownMenuItem(
                     value: items,
                     child: Text(items),
@@ -113,7 +161,7 @@ class _timetable_screensState extends State<timetable_screens> {
 
                 onChanged: (String? newValue) {
                   setState(() {
-                    dropdownvalue_intervel = newValue!;
+                    sleepTime = newValue!;
                   });
                 },
               ),
@@ -121,7 +169,7 @@ class _timetable_screensState extends State<timetable_screens> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
               child: Text(
-                'Select hr for leisure',
+                'Class Start At',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0,
@@ -133,13 +181,13 @@ class _timetable_screensState extends State<timetable_screens> {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial Value
-                value: dropdownvalue_lunch,
+                value: classStartTime,
 
                 // Down Arrow Icon
                 icon: const Icon(Icons.keyboard_arrow_down),
 
                 // Array list of items
-                items: items.map((String items) {
+                items: classStartTimes.map((String items) {
                   return DropdownMenuItem(
                     value: items,
                     child: Text(items),
@@ -149,7 +197,7 @@ class _timetable_screensState extends State<timetable_screens> {
                 // change button value to selected value
                 onChanged: (String? newValue) {
                   setState(() {
-                    dropdownvalue_lunch = newValue!;
+                    classStartTime = newValue!;
                   });
                 },
               ),
@@ -157,7 +205,7 @@ class _timetable_screensState extends State<timetable_screens> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
               child: Text(
-                'Select hr for prayer',
+                'Class End At',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0,
@@ -169,13 +217,13 @@ class _timetable_screensState extends State<timetable_screens> {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial Value
-                value: dropdownvalue_prayer,
+                value: classEndTime,
 
                 // Down Arrow Icon
                 icon: const Icon(Icons.keyboard_arrow_down),
 
                 // Array list of items
-                items: items.map((String items) {
+                items: classEndTimes.map((String items) {
                   return DropdownMenuItem(
                     value: items,
                     child: Text(items),
@@ -185,7 +233,7 @@ class _timetable_screensState extends State<timetable_screens> {
                 // change button value to selected value
                 onChanged: (String? newValue) {
                   setState(() {
-                    dropdownvalue_prayer = newValue!;
+                    classEndTime = newValue!;
                   });
                 },
               ),

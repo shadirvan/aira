@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:aira/screens/grammer_screen.dart';
 import 'package:aira/screens/question_screen.dart';
 
 import 'package:aira/screens/summarise_screen.dart';
@@ -337,50 +338,60 @@ class _home_screenState extends State<home_screen> {
                               padding: EdgeInsets.only(top: 10),
                               width: 200,
                               height: 250,
-                              child: Stack(
-                                children: [
-                                  Center(
-                                    child: Container(
-                                      width: 160,
-                                      height: 180,
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(20),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.5),
-                                            spreadRadius: 1,
-                                            blurRadius: 12,
-                                            offset: const Offset(0, 3),
-                                          ),
-                                        ],
+                              child: InkWell(
+                                onTap: () => Navigator.of(context)
+                                    .push(MaterialPageRoute(
+                                  builder: (context) => GrammerScreen(),
+                                )),
+                                child: Stack(
+                                  children: [
+                                    Center(
+                                      child: Container(
+                                        width: 160,
+                                        height: 180,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.grey.withOpacity(0.5),
+                                              spreadRadius: 1,
+                                              blurRadius: 12,
+                                              offset: const Offset(0, 3),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Positioned(
-                                      left: 40,
-                                      child: Column(
-                                        children: [
-                                          Image.asset(
-                                            'assets/images/scanner.png',
-                                            width: 100,
-                                            fit: BoxFit.cover,
-                                          ),
-                                          const SizedBox(
-                                            height: 40,
-                                          ),
-                                          const Align(
-                                              alignment: Alignment.bottomCenter,
-                                              child: Text(
-                                                'Fix Grammar',
-                                                style: TextStyle(
-                                                    fontSize: 20,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.black),
-                                              )),
-                                        ],
-                                      )),
-                                ],
+                                    Positioned(
+                                        left: 40,
+                                        child: Column(
+                                          children: [
+                                            Image.asset(
+                                              'assets/images/scanner.png',
+                                              width: 100,
+                                              fit: BoxFit.cover,
+                                            ),
+                                            const SizedBox(
+                                              height: 40,
+                                            ),
+                                            const Align(
+                                                alignment:
+                                                    Alignment.bottomCenter,
+                                                child: Text(
+                                                  'Fix Grammar',
+                                                  style: TextStyle(
+                                                      fontSize: 20,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.black),
+                                                )),
+                                          ],
+                                        )),
+                                  ],
+                                ),
                               ),
                             )
                           ],
