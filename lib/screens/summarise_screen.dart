@@ -97,7 +97,7 @@ class _summariseScreenState extends State<summariseScreen> {
                         _summaryController.clear();
 
                         messageWidgets.add(MessageBubble.first(
-                            userImage: '',
+                            userImage: 'https://i.ibb.co/m4vFSDZ/user.png',
                             username: 'User',
                             message: promptMessage,
                             isMe: true));
@@ -124,7 +124,8 @@ class _summariseScreenState extends State<summariseScreen> {
                           print(jsonDecode(response.body)['choices'][0]
                               ['message']['content']);
                           messageWidgets.add(MessageBubble.first(
-                              userImage: '',
+                              userImage:
+                                  'https://i.ibb.co/Zm0mWSb/pngegg-1.png',
                               username: 'AI',
                               message: jsonDecode(response.body)['choices'][0]
                                   ['message']['content'],
