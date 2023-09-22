@@ -151,7 +151,8 @@ class _home_screenState extends State<home_screen> {
                           children: [
                             Container(
                               padding: const EdgeInsets.only(top: 10),
-                              width: 200,
+                              width:
+                                  (MediaQuery.of(context).size.width / 2) - 10,
                               height: 250,
                               child: InkWell(
                                 onTap: () => Navigator.of(context)
@@ -162,7 +163,10 @@ class _home_screenState extends State<home_screen> {
                                   children: [
                                     Center(
                                       child: Container(
-                                        width: 160,
+                                        width:
+                                            (MediaQuery.of(context).size.width /
+                                                    2) -
+                                                30,
                                         height: 180,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -211,7 +215,8 @@ class _home_screenState extends State<home_screen> {
                             ),
                             Container(
                               padding: const EdgeInsets.only(top: 10),
-                              width: 200,
+                              width:
+                                  (MediaQuery.of(context).size.width / 2) - 10,
                               height: 250,
                               child: InkWell(
                                 onTap: () => Navigator.of(context)
@@ -222,7 +227,10 @@ class _home_screenState extends State<home_screen> {
                                   children: [
                                     Center(
                                       child: Container(
-                                        width: 160,
+                                        width:
+                                            (MediaQuery.of(context).size.width /
+                                                    2) -
+                                                30,
                                         height: 180,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -241,7 +249,7 @@ class _home_screenState extends State<home_screen> {
                                       ),
                                     ),
                                     Positioned(
-                                        left: 50,
+                                        left: 45,
                                         child: Column(
                                           children: [
                                             Image.asset(
@@ -276,7 +284,8 @@ class _home_screenState extends State<home_screen> {
                           children: [
                             Container(
                               padding: const EdgeInsets.only(top: 10),
-                              width: 200,
+                              width:
+                                  (MediaQuery.of(context).size.width / 2) - 10,
                               height: 250,
                               child: InkWell(
                                 onTap: () => Navigator.of(context)
@@ -287,7 +296,10 @@ class _home_screenState extends State<home_screen> {
                                   children: [
                                     Center(
                                       child: Container(
-                                        width: 160,
+                                        width:
+                                            (MediaQuery.of(context).size.width /
+                                                    2) -
+                                                30,
                                         height: 180,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -306,7 +318,7 @@ class _home_screenState extends State<home_screen> {
                                       ),
                                     ),
                                     Positioned(
-                                        left: 30,
+                                        left: 25,
                                         child: Column(
                                           children: [
                                             Image.asset(
@@ -336,7 +348,8 @@ class _home_screenState extends State<home_screen> {
                             ),
                             Container(
                               padding: EdgeInsets.only(top: 10),
-                              width: 200,
+                              width:
+                                  (MediaQuery.of(context).size.width / 2) - 10,
                               height: 250,
                               child: InkWell(
                                 onTap: () => Navigator.of(context)
@@ -347,7 +360,10 @@ class _home_screenState extends State<home_screen> {
                                   children: [
                                     Center(
                                       child: Container(
-                                        width: 160,
+                                        width:
+                                            (MediaQuery.of(context).size.width /
+                                                    2) -
+                                                30,
                                         height: 180,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -366,7 +382,7 @@ class _home_screenState extends State<home_screen> {
                                       ),
                                     ),
                                     Positioned(
-                                        left: 40,
+                                        left: 25,
                                         child: Column(
                                           children: [
                                             Image.asset(
