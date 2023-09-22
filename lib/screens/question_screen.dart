@@ -111,6 +111,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
                     String rawData = jsonDecode(response.body)['choices'][0]
                         ['message']['content'];
 
+                    print(rawData);
+
                     questions = rawData.split('\n');
                     print(questions);
                   },
