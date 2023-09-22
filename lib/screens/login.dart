@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => home_screen(),
                     )),
-                  )
+                  ) // test
           ],
         ),
       ),
