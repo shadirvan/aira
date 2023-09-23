@@ -53,7 +53,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           const Text(
             'Enter a topic to generate questions from',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 20,
@@ -61,10 +61,22 @@ class _QuestionScreenState extends State<QuestionScreen> {
           TextField(
               controller: _topicController,
               decoration: InputDecoration(
-                label: const Text('Topic'),
+                label: const Text(
+                  'Topic',
+                  style: TextStyle(color: Colors.black),
+                ),
                 hintText: 'Ask question from',
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+                hintStyle: TextStyle(color: Colors.black),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.amber, width: 1),
+                    borderRadius: BorderRadius.circular(20)),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.amber, width: 1),
+                    borderRadius: BorderRadius.circular(20)),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.amber, width: 1),
+                  borderRadius: BorderRadius.circular(20),
+                ),
               )),
           const SizedBox(
             height: 10,
@@ -72,6 +84,9 @@ class _QuestionScreenState extends State<QuestionScreen> {
           _isLoading
               ? const CircularProgressIndicator()
               : ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Color.fromARGB(255, 227, 85, 63)),
                   onPressed: () async {
                     FocusManager.instance.primaryFocus?.unfocus();
                     _topic = _topicController.text;
@@ -94,7 +109,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                 {
                                   "role": "user",
                                   "content":
-                                      "ask me  5  questions about $_topic"
+                                      "ask me  10  questions about $_topic"
                                 }
                               ],
                               'temperature': 0.5,

@@ -32,7 +32,7 @@ class TimeTableDetailsScreen extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(20),
           child: SingleChildScrollView(
-            child: Text(
+            child: SelectableText(
               timetable,
               style: TextStyle(fontSize: 18),
             ),

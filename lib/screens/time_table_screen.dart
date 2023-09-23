@@ -315,22 +315,43 @@ class _timetable_screensState extends State<timetable_screens> {
                 ),
               ),
               Container(
-                  margin: EdgeInsets.symmetric(horizontal: 30),
+                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                   child: TextFormField(
                     onChanged: (value) {
                       otherInfo = value;
                     },
                     controller: _otherInfoController,
                     decoration: InputDecoration(
-                        label: Text('Other info'),
-                        hintText: 'eg: want to learn AI for 1 hr'),
+                      label: const Text(
+                        'Other infos',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      hintText: 'eg. want to learn AI and Flutter for 1 hr',
+                      focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.redAccent, width: 1),
+                          borderRadius: BorderRadius.circular(20)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.redAccent, width: 1),
+                          borderRadius: BorderRadius.circular(20)),
+                      border: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Colors.redAccent, width: 1),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
                   )),
               SizedBox(
                 height: 30,
               ),
               isLoading
-                  ? CircularProgressIndicator()
+                  ? CircularProgressIndicator(
+                      color: Colors.redAccent,
+                    )
                   : ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.redAccent),
                       onPressed: () async {
                         setState(() {
                           isLoading = true;

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:aira/widgets/message_bubble.dart';
+import 'package:aira/widgets/message_bubble_green.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
@@ -61,13 +61,16 @@ class _GrammerScreenState extends State<GrammerScreen> {
                   ],
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: Color.fromARGB(255, 140, 241, 221),
                     width: 1,
                   )),
               child: messageWidgets.isEmpty
                   ? const Center(
-                      child:
-                          Text('Write the text with grammatical errors below '),
+                      child: Text(
+                        'Write the text with grammatical errors below ',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 20),
+                      ),
                     )
                   : ListView.builder(
                       itemCount: messageWidgets.length,
@@ -84,6 +87,12 @@ class _GrammerScreenState extends State<GrammerScreen> {
               controller: _summaryController,
               maxLines: 5,
               decoration: InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Color.fromARGB(255, 140, 241, 221), width: 2)),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Color.fromARGB(255, 140, 241, 221), width: 2)),
                 border: const OutlineInputBorder(),
                 floatingLabelAlignment: FloatingLabelAlignment.center,
                 suffixIcon: IconButton(
@@ -97,7 +106,7 @@ class _GrammerScreenState extends State<GrammerScreen> {
 
                       _summaryController.clear();
 
-                      messageWidgets.add(MessageBubble.first(
+                      messageWidgets.add(MessageBubbleGreen.first(
                           userImage: 'https://i.ibb.co/m4vFSDZ/user.png',
                           username: 'User',
                           message: promptMessage,
@@ -123,7 +132,7 @@ class _GrammerScreenState extends State<GrammerScreen> {
                       setState(() {
                         print(jsonDecode(response.body)['choices'][0]['message']
                             ['content']);
-                        messageWidgets.add(MessageBubble.first(
+                        messageWidgets.add(MessageBubbleGreen.first(
                             userImage: 'https://i.ibb.co/Zm0mWSb/pngegg-1.png',
                             username: 'AI',
                             message: jsonDecode(response.body)['choices'][0]
@@ -133,7 +142,7 @@ class _GrammerScreenState extends State<GrammerScreen> {
                     },
                     icon: const Icon(
                       Icons.send,
-                      color: Colors.black,
+                      color: Color.fromARGB(255, 52, 135, 119),
                     )),
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 5, horizontal: 5),

@@ -347,7 +347,7 @@ class _home_screenState extends State<home_screen> {
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.only(top: 10),
+                              padding: const EdgeInsets.only(top: 10),
                               width:
                                   (MediaQuery.of(context).size.width / 2) - 10,
                               height: 250,

@@ -62,12 +62,16 @@ class _summariseScreenState extends State<summariseScreen> {
                   ],
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: Colors.blue,
                     width: 1,
                   )),
               child: messageWidgets.isEmpty
                   ? const Center(
-                      child: Text('Enter long paragraphs below to summarise '),
+                      child: Text(
+                        'Enter long paragraphs below to summarise ',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 20),
+                      ),
                     )
                   : ListView.builder(
                       itemCount: messageWidgets.length,
@@ -80,10 +84,13 @@ class _summariseScreenState extends State<summariseScreen> {
           Container(
             margin: const EdgeInsets.all(20),
             child: TextField(
+              textAlign: TextAlign.start,
               textAlignVertical: TextAlignVertical.center,
               controller: _summaryController,
               maxLines: 5,
               decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blueAccent)),
                   border: const OutlineInputBorder(),
                   floatingLabelAlignment: FloatingLabelAlignment.center,
                   suffixIcon: IconButton(
@@ -134,11 +141,12 @@ class _summariseScreenState extends State<summariseScreen> {
                       },
                       icon: const Icon(
                         Icons.send,
-                        color: Colors.black,
+                        color: Colors.blueAccent,
                       )),
                   contentPadding:
                       const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-                  hintText: 'what do you want to summarise',
+                  hintText: 'What do you want to summarise?',
+                  hintStyle: TextStyle(color: Colors.blue),
                   alignLabelWithHint: true),
             ),
           ),
