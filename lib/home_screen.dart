@@ -10,20 +10,19 @@ import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
 
-class home_screen extends StatefulWidget {
-  const home_screen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<home_screen> createState() => _home_screenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _home_screenState extends State<home_screen> {
+class _HomeScreenState extends State<HomeScreen> {
   var fetchedData;
   bool isLoading = false;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     fetchDataFromApi();
@@ -117,7 +116,7 @@ class _home_screenState extends State<home_screen> {
                                 alignment: Alignment.bottomRight,
                                 child: Text(
                                   '- ${fetchedData[0]['author']}',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
@@ -157,7 +156,7 @@ class _home_screenState extends State<home_screen> {
                               child: InkWell(
                                 onTap: () => Navigator.of(context)
                                     .push(MaterialPageRoute(
-                                  builder: (context) => summariseScreen(),
+                                  builder: (context) => const SummariseScreen(),
                                 )),
                                 child: Stack(
                                   children: [
@@ -221,7 +220,7 @@ class _home_screenState extends State<home_screen> {
                               child: InkWell(
                                 onTap: () => Navigator.of(context)
                                     .push(MaterialPageRoute(
-                                  builder: (context) => timetable_screens(),
+                                  builder: (context) => const TimeTableScreen(),
                                 )),
                                 child: Stack(
                                   children: [
@@ -290,7 +289,7 @@ class _home_screenState extends State<home_screen> {
                               child: InkWell(
                                 onTap: () => Navigator.of(context)
                                     .push(MaterialPageRoute(
-                                  builder: (context) => QuestionScreen(),
+                                  builder: (context) => const QuestionScreen(),
                                 )),
                                 child: Stack(
                                   children: [

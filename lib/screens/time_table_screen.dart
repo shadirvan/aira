@@ -6,14 +6,14 @@ import 'package:http/http.dart' as http;
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-class timetable_screens extends StatefulWidget {
-  timetable_screens({super.key});
+class TimeTableScreen extends StatefulWidget {
+  const TimeTableScreen({super.key});
 
   @override
-  State<timetable_screens> createState() => _timetable_screensState();
+  State<TimeTableScreen> createState() => _TimeTableScreenState();
 }
 
-class _timetable_screensState extends State<timetable_screens> {
+class _TimeTableScreenState extends State<TimeTableScreen> {
   String wakeTime = '5:00 AM';
   String sleepTime = '10:00 PM';
   String classStartTime = '9:00 AM';
@@ -22,7 +22,7 @@ class _timetable_screensState extends State<timetable_screens> {
 
   String otherInfo = '';
 
-  var WakingTimes = [
+  var wakingTimes = [
     '5:00 AM',
     '5:30 AM',
     '6:00 AM',
@@ -98,6 +98,7 @@ class _timetable_screensState extends State<timetable_screens> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -148,7 +149,7 @@ class _timetable_screensState extends State<timetable_screens> {
                     icon: const Icon(Icons.keyboard_arrow_down),
 
                     // Array list of items
-                    items: WakingTimes.map((String items) {
+                    items: wakingTimes.map((String items) {
                       return DropdownMenuItem(
                         value: items,
                         child: Text(items),
@@ -164,8 +165,7 @@ class _timetable_screensState extends State<timetable_screens> {
                 ),
               ),
               const Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 1),
                 child: Text(
                   'Sleep Time',
                   style: TextStyle(
@@ -175,7 +175,8 @@ class _timetable_screensState extends State<timetable_screens> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 child: DropdownButton(
                   // Initial Value
                   isExpanded: true,
@@ -200,9 +201,8 @@ class _timetable_screensState extends State<timetable_screens> {
                   },
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 1),
                 child: Text(
                   'Class Start At',
                   style: TextStyle(
@@ -238,9 +238,8 @@ class _timetable_screensState extends State<timetable_screens> {
                   },
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 1),
                 child: Text(
                   'Class End At',
                   style: TextStyle(
@@ -276,9 +275,8 @@ class _timetable_screensState extends State<timetable_screens> {
                   },
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 1),
                 child: Text(
                   'Dinner Time',
                   style: TextStyle(
@@ -315,7 +313,8 @@ class _timetable_screensState extends State<timetable_screens> {
                 ),
               ),
               Container(
-                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                   child: TextFormField(
                     onChanged: (value) {
                       otherInfo = value;
@@ -328,25 +327,25 @@ class _timetable_screensState extends State<timetable_screens> {
                       ),
                       hintText: 'eg. want to learn AI and Flutter for 1 hr',
                       focusedBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.redAccent, width: 1),
+                          borderSide: const BorderSide(
+                              color: Colors.redAccent, width: 1),
                           borderRadius: BorderRadius.circular(20)),
                       enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.redAccent, width: 1),
+                          borderSide: const BorderSide(
+                              color: Colors.redAccent, width: 1),
                           borderRadius: BorderRadius.circular(20)),
                       border: OutlineInputBorder(
                         borderSide:
-                            BorderSide(color: Colors.redAccent, width: 1),
+                            const BorderSide(color: Colors.redAccent, width: 1),
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               isLoading
-                  ? CircularProgressIndicator(
+                  ? const CircularProgressIndicator(
                       color: Colors.redAccent,
                     )
                   : ElevatedButton(
@@ -357,7 +356,7 @@ class _timetable_screensState extends State<timetable_screens> {
                           isLoading = true;
                         });
 
-                        final response = await http
+                        await http
                             .post(
                                 Uri.parse(
                                     'https://api.openai.com/v1/chat/completions'),
@@ -388,11 +387,8 @@ class _timetable_screensState extends State<timetable_screens> {
                         setState(() {
                           isLoading = false;
                         });
-
-                        print(jsonDecode(response.body)['choices'][0]['message']
-                            ['content']);
                       },
-                      child: Text('Generate Time table'))
+                      child: const Text('Generate Time table'))
             ],
           ),
         ),

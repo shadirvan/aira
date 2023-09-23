@@ -6,9 +6,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class QuestionListScreen extends StatefulWidget {
-  QuestionListScreen({super.key, required this.questions});
+  const QuestionListScreen({super.key, required this.questions});
 
-  List<String> questions;
+  final List<String> questions;
 
   @override
   State<QuestionListScreen> createState() => _QuestionListScreenState();
@@ -53,7 +53,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
                     style: const TextStyle(fontSize: 18),
                   ),
                   trailing: isLoading && buttonIndex == index
-                      ? CircularProgressIndicator()
+                      ? const CircularProgressIndicator()
                       : ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.amber,
@@ -64,7 +64,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
                               isLoading = true;
                             });
 
-                            final response = await http
+                            await http
                                 .post(
                                     Uri.parse(
                                         'https://api.openai.com/v1/chat/completions'),
@@ -78,8 +78,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
                                       "messages": [
                                         {
                                           "role": "user",
-                                          "content":
-                                              "${widget.questions[index]}"
+                                          "content": widget.questions[index]
                                         }
                                       ],
                                       'temperature': 0.5,
