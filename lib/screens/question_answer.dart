@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class QuestionAnswerScreen extends StatelessWidget {
-  QuestionAnswerScreen(
+  const QuestionAnswerScreen(
       {super.key, required this.question, required this.answer});
 
-  String question;
-  String answer;
+  final String question;
+  final String answer;
 
   @override
   Widget build(BuildContext context) {

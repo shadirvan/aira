@@ -14,7 +14,7 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   // Decalre TextEditing Controller for getting text
-  TextEditingController _topicController = TextEditingController();
+  final TextEditingController _topicController = TextEditingController();
 
   String _topic = '';
   bool _isLoading = false;
@@ -55,7 +55,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
             'Enter a topic to generate questions from',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           TextField(
@@ -66,15 +66,15 @@ class _QuestionScreenState extends State<QuestionScreen> {
                   style: TextStyle(color: Colors.black),
                 ),
                 hintText: 'Ask question from',
-                hintStyle: TextStyle(color: Colors.black),
+                hintStyle: const TextStyle(color: Colors.black),
                 focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.amber, width: 1),
+                    borderSide: const BorderSide(color: Colors.amber, width: 1),
                     borderRadius: BorderRadius.circular(20)),
                 enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.amber, width: 1),
+                    borderSide: const BorderSide(color: Colors.amber, width: 1),
                     borderRadius: BorderRadius.circular(20)),
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.amber, width: 1),
+                  borderSide: const BorderSide(color: Colors.amber, width: 1),
                   borderRadius: BorderRadius.circular(20),
                 ),
               )),
@@ -86,7 +86,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               : ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Color.fromARGB(255, 227, 85, 63)),
+                      backgroundColor: const Color.fromARGB(255, 227, 85, 63)),
                   onPressed: () async {
                     FocusManager.instance.primaryFocus?.unfocus();
                     _topic = _topicController.text;
@@ -134,10 +134,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                     String rawData = jsonDecode(response.body)['choices'][0]
                         ['message']['content'];
 
-                    print(rawData);
-
                     questions = rawData.split('\n');
-                    print(questions);
                   },
                   child: const Text('Ask Question'))
         ]),

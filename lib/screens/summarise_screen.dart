@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
-class summariseScreen extends StatefulWidget {
-  summariseScreen({super.key});
+class SummariseScreen extends StatefulWidget {
+  const SummariseScreen({super.key});
 
   @override
-  State<summariseScreen> createState() => _summariseScreenState();
+  State<SummariseScreen> createState() => _SummariseScreenState();
 }
 
-class _summariseScreenState extends State<summariseScreen> {
+class _SummariseScreenState extends State<SummariseScreen> {
   final TextEditingController _summaryController = TextEditingController();
   List<Widget> messageWidgets = [];
   var replayMessages = [];
@@ -21,7 +21,7 @@ class _summariseScreenState extends State<summariseScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
+    super.dispose();
     _summaryController.dispose();
   }
 
@@ -89,7 +89,7 @@ class _summariseScreenState extends State<summariseScreen> {
               controller: _summaryController,
               maxLines: 5,
               decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
+                  enabledBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.blueAccent)),
                   border: const OutlineInputBorder(),
                   floatingLabelAlignment: FloatingLabelAlignment.center,
@@ -128,8 +128,6 @@ class _summariseScreenState extends State<summariseScreen> {
                               'temperature': 0.7,
                             }));
                         setState(() {
-                          print(jsonDecode(response.body)['choices'][0]
-                              ['message']['content']);
                           messageWidgets.add(MessageBubble.first(
                               userImage:
                                   'https://i.ibb.co/Zm0mWSb/pngegg-1.png',
@@ -146,7 +144,7 @@ class _summariseScreenState extends State<summariseScreen> {
                   contentPadding:
                       const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                   hintText: 'What do you want to summarise?',
-                  hintStyle: TextStyle(color: Colors.blue),
+                  hintStyle: const TextStyle(color: Colors.blue),
                   alignLabelWithHint: true),
             ),
           ),

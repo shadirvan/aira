@@ -61,7 +61,7 @@ class _GrammerScreenState extends State<GrammerScreen> {
                   ],
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Color.fromARGB(255, 140, 241, 221),
+                    color: const Color.fromARGB(255, 140, 241, 221),
                     width: 1,
                   )),
               child: messageWidgets.isEmpty
@@ -87,10 +87,10 @@ class _GrammerScreenState extends State<GrammerScreen> {
               controller: _summaryController,
               maxLines: 5,
               decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
+                focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(
                         color: Color.fromARGB(255, 140, 241, 221), width: 2)),
-                enabledBorder: OutlineInputBorder(
+                enabledBorder: const OutlineInputBorder(
                     borderSide: BorderSide(
                         color: Color.fromARGB(255, 140, 241, 221), width: 2)),
                 border: const OutlineInputBorder(),

@@ -28,13 +28,13 @@ class TimeTableDetailsScreen extends StatelessWidget {
       ),
       body: Card(
         elevation: 2,
-        margin: EdgeInsets.all(20),
+        margin: const EdgeInsets.all(20),
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: SingleChildScrollView(
             child: SelectableText(
               timetable,
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
           ),
         ),

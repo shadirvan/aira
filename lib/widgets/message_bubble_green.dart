@@ -129,7 +129,7 @@ class MessageBubbleGreen extends StatelessWidget {
                         height: 1.3,
                         color: isMe
                             ? Colors.black87
-                            : Color.fromARGB(255, 10, 114, 4),
+                            : const Color.fromARGB(255, 10, 114, 4),
                       ),
                     ),
                   ),
